@@ -1,0 +1,601 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Camping Beeckaert — Retro hofcamping seizoen 2026</title>
+  <meta name="description" content="Camping Beeckaert in Jonkershove: een tijdelijke, compleet overroepen 80s-hofcamping met kampvuur, kinderbadje, privé-bos, tuinslangdouche, ontbijtservice en animatie door de moemoe." />
+  <style>
+    :root {
+      --night: #140f2d;
+      --deep: #25145f;
+      --hot: #ff2f92;
+      --sun: #ffcf3f;
+      --cyan: #28f6ff;
+      --mint: #63ff9a;
+      --cream: #fff6cf;
+      --orange: #ff7b2e;
+      --shadow: rgba(0,0,0,.35);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% -10%, rgba(255,207,63,.35), transparent 28rem),
+        linear-gradient(180deg, #110b2b 0%, #21115a 48%, #0d2135 100%);
+      font-family: "Trebuchet MS", "Arial Rounded MT Bold", Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,.035), rgba(255,255,255,.035) 1px, transparent 1px, transparent 4px);
+      mix-blend-mode: screen;
+      opacity: .55;
+      z-index: 20;
+    }
+
+    a { color: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: .85rem clamp(1rem, 4vw, 3rem);
+      background: rgba(20,15,45,.76);
+      border-bottom: 2px solid rgba(40,246,255,.45);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,.25);
+    }
+
+    .brand {
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      text-shadow: 3px 3px 0 var(--hot), 6px 6px 0 rgba(40,246,255,.45);
+    }
+
+    .nav {
+      display: flex;
+      gap: .7rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      font-size: .9rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      padding: .35rem .65rem;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      padding: 5rem 1rem 4rem;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .sunset {
+      width: min(32rem, 82vw);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      position: absolute;
+      top: 7rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background:
+        repeating-linear-gradient(0deg, var(--orange) 0 1.2rem, transparent 1.2rem 1.75rem),
+        linear-gradient(180deg, var(--sun), var(--hot));
+      filter: drop-shadow(0 0 45px rgba(255,47,146,.45));
+      opacity: .9;
+    }
+
+    .grid {
+      position: absolute;
+      inset: auto -20vw 0;
+      height: 42vh;
+      background:
+        linear-gradient(rgba(40,246,255,.45) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(40,246,255,.45) 1px, transparent 1px);
+      background-size: 100% 2rem, 4rem 100%;
+      transform: perspective(360px) rotateX(62deg);
+      transform-origin: bottom;
+      opacity: .55;
+    }
+
+    .mountains {
+      position: absolute;
+      inset: auto 0 18vh;
+      height: 18rem;
+      background:
+        linear-gradient(135deg, transparent 0 50%, #0a1830 50% 100%) 0 100% / 28rem 14rem repeat-x,
+        linear-gradient(225deg, transparent 0 50%, #132150 50% 100%) 8rem 100% / 30rem 16rem repeat-x;
+      opacity: .85;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      padding-top: 3rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: .45rem .8rem;
+      color: #1b103f;
+      background: var(--mint);
+      border: 3px solid var(--cream);
+      box-shadow: 6px 6px 0 var(--hot);
+      font-weight: 900;
+      text-transform: uppercase;
+      transform: rotate(-2deg);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 11vw, 8.2rem);
+      line-height: .82;
+      text-transform: uppercase;
+      letter-spacing: -.06em;
+      text-shadow:
+        5px 5px 0 var(--hot),
+        10px 10px 0 var(--cyan),
+        15px 15px 20px rgba(0,0,0,.5);
+    }
+
+    .subtitle {
+      max-width: 800px;
+      margin: 2rem auto 0;
+      font-size: clamp(1.15rem, 2.5vw, 1.7rem);
+      line-height: 1.45;
+      text-shadow: 0 2px 0 rgba(0,0,0,.45);
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2.2rem;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      padding: 1rem 1.35rem;
+      color: #160d36;
+      border: 3px solid var(--cream);
+      box-shadow: 8px 8px 0 var(--shadow);
+      transform: skew(-5deg);
+    }
+
+    .btn span { display: inline-block; transform: skew(5deg); }
+    .btn-primary { background: var(--sun); }
+    .btn-secondary { background: var(--cyan); }
+
+    section {
+      padding: 4.5rem clamp(1rem, 5vw, 4rem);
+      position: relative;
+    }
+
+    .section-title {
+      max-width: 980px;
+      margin: 0 auto 2rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 4.2rem);
+      line-height: .95;
+      text-transform: uppercase;
+      color: var(--sun);
+      text-shadow: 4px 4px 0 var(--hot);
+    }
+
+    .lead {
+      max-width: 760px;
+      font-size: 1.18rem;
+      line-height: 1.6;
+      color: rgba(255,246,207,.9);
+    }
+
+    .cards {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+    }
+
+    .card {
+      padding: 1.25rem;
+      min-height: 16rem;
+      color: #180d36;
+      background: var(--cream);
+      border: 4px solid #180d36;
+      box-shadow: 10px 10px 0 rgba(0,0,0,.32);
+      transform: rotate(var(--tilt, 0deg));
+    }
+
+    .card:nth-child(2n) { --tilt: 1.4deg; background: #dffcff; }
+    .card:nth-child(3n) { --tilt: -1deg; background: #fff0ad; }
+    .card:nth-child(4n) { --tilt: .8deg; background: #d9ffe7; }
+
+    .icon {
+      font-size: 3rem;
+      display: inline-block;
+      filter: drop-shadow(4px 4px 0 rgba(255,47,146,.4));
+    }
+
+    h3 {
+      margin: .8rem 0 .5rem;
+      font-size: 1.55rem;
+      text-transform: uppercase;
+    }
+
+    .card p { margin: 0; line-height: 1.45; font-size: 1rem; }
+
+    .strip {
+      overflow: hidden;
+      border-block: 3px solid rgba(255,255,255,.5);
+      background: var(--hot);
+      color: #160d36;
+      font-weight: 900;
+      text-transform: uppercase;
+      white-space: nowrap;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,.2);
+    }
+
+    .ticker {
+      display: inline-block;
+      padding: .85rem 0;
+      animation: marquee 22s linear infinite;
+    }
+
+    .notice {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1.3rem 1.6rem;
+      color: #160d36;
+      background: var(--sun);
+      border: 4px solid var(--cream);
+      box-shadow: 10px 10px 0 var(--hot);
+      font-size: clamp(1.05rem, 2.2vw, 1.45rem);
+      line-height: 1.45;
+      font-weight: 900;
+      text-align: center;
+      transform: rotate(-1deg);
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .split {
+      max-width: 1120px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 2rem;
+      align-items: stretch;
+    }
+
+    .panel {
+      padding: 2rem;
+      background: rgba(255,255,255,.08);
+      border: 2px solid rgba(40,246,255,.4);
+      box-shadow: 0 22px 50px rgba(0,0,0,.26);
+    }
+
+    .panel ul {
+      margin: 1rem 0 0;
+      padding-left: 1.1rem;
+      line-height: 1.75;
+    }
+
+    .poster {
+      display: grid;
+      place-items: center;
+      min-height: 26rem;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255,207,63,.8), transparent 10rem),
+        linear-gradient(160deg, var(--hot), var(--deep) 48%, #071b2a);
+      border: 5px solid var(--cream);
+      box-shadow: 12px 12px 0 var(--shadow);
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 45% -10% -20%;
+      background:
+        linear-gradient(rgba(255,255,255,.28) 2px, transparent 2px),
+        linear-gradient(90deg, rgba(255,255,255,.28) 2px, transparent 2px);
+      background-size: 100% 2rem, 3rem 100%;
+      transform: perspective(300px) rotateX(58deg);
+      transform-origin: top;
+    }
+
+    .poster-content { position: relative; z-index: 1; padding: 1rem; }
+    .poster .big { font-size: clamp(4rem, 12vw, 8rem); line-height: 1; }
+    .poster strong { display: block; font-size: 2rem; text-transform: uppercase; text-shadow: 4px 4px 0 var(--hot); }
+
+    .booking {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2rem;
+      background: var(--cream);
+      color: #180d36;
+      border: 5px solid #180d36;
+      box-shadow: 12px 12px 0 rgba(0,0,0,.35);
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    label {
+      display: grid;
+      gap: .35rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: .9rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: .85rem;
+      border: 3px solid #180d36;
+      background: #fffdf0;
+      font: inherit;
+    }
+
+    textarea, .full { grid-column: 1 / -1; }
+
+    .submit {
+      grid-column: 1 / -1;
+      cursor: pointer;
+      justify-self: start;
+      background: var(--mint);
+      font-weight: 900;
+      text-transform: uppercase;
+      border: 3px solid #180d36;
+      padding: 1rem 1.3rem;
+      box-shadow: 6px 6px 0 var(--hot);
+    }
+
+    .fineprint {
+      margin-top: 1rem;
+      font-size: .9rem;
+      line-height: 1.5;
+      opacity: .85;
+    }
+
+    footer {
+      padding: 3rem 1rem 4rem;
+      text-align: center;
+      background: #0b1024;
+      border-top: 2px solid rgba(255,255,255,.25);
+    }
+
+    .smallcaps { text-transform: uppercase; letter-spacing: .08em; font-weight: 900; }
+    .wf { color: var(--mint); font-weight: 900; }
+
+    @media (max-width: 860px) {
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .cards { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+      .hero { min-height: 78vh; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Camping Beeckaert</div>
+    <nav class="nav" aria-label="Hoofdnavigatie">
+      <a href="#faciliteiten">Faciliteiten</a>
+      <a href="#westhoek">Westhoek</a>
+      <a href="#huisregels">Huisregels</a>
+      <a href="#boeken">Boeken</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="sunset" aria-hidden="true"></div>
+      <div class="mountains" aria-hidden="true"></div>
+      <div class="grid" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <div class="badge">Nieuw in Jonkershove • seizoen 2026</div>
+        <h1>Camping Beeckaert</h1>
+        <p class="subtitle">Tussen Ieper en Diksmuide, vlakbij Houthulst, ligt de meest exclusieve hofcamping van de Westhoek. <strong>’t Is gelijk je bij familie bent</strong> — maar dan met meer gras, meer frigo en een <span class="wf">schjone lap den hof</span>.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#boeken"><span>Boek den hof</span></a>
+          <a class="btn btn-secondary" href="#faciliteiten"><span>Bekijk de luxe</span></a>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true">
+      <div class="ticker"> ★ kampvuur ★ kinderbadje voor 1 wasmand-kind ★ privé-bos ★ douche met de tuinslang ★ ontbijtservice ★ self-service in de frigo ★ geen was-service, je bent oud genoeg ★ animatie door de moemoe ★ &nbsp; ★ kampvuur ★ kinderbadje voor 1 wasmand-kind ★ privé-bos ★ douche met de tuinslang ★ ontbijtservice ★ self-service in de frigo ★ geen was-service, je bent oud genoeg ★ animatie door de moemoe ★ &nbsp;</div>
+    </div>
+
+    <section id="faciliteiten">
+      <div class="section-title">
+        <h2>Faciliteiten waar Center Parcs nerveus van wordt</h2>
+        <p class="lead">Bij Camping Beeckaert doen we niet aan overbodige luxe. Wel aan authentieke hofbeleving, verse buitenlucht en voorzieningen die recht uit een folder van seizoen 2026 lijken te komen, maar dan gedrukt op papier uit de jaren tachtig.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <span class="icon">🔥</span>
+          <h3>Kampvuur deluxe</h3>
+          <p>Voor sterke verhalen, rook in uw trui en de officiële BBQ-formule: worst met een pistolet. Geen marshmallows, we zijn geen Amerikanen.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🏊</span>
+          <h3>Kinderzwembad</h3>
+          <p>Een compact aquapark voor jonge gasten. Eén kind per keer, en het kind mag niet groter zijn dan een wasmand. Veiligheid eerst, ambiance daarna.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🥐</span>
+          <h3>Ontbijtservice</h3>
+          <p>Begin de dag met koffie, broodjes en het zachte geritsel van mensen die nog niet uitgeslapen zijn. Luxe, maar op Beeckaert-tempo.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🌳</span>
+          <h3>Privé-bos achteraan</h3>
+          <p>Geen aangelegd wandelpad, wel avontuur. Baan uzelf een weg door den hof: er zijn bramen en frambozen, als ge ze kunt vinden.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🚿</span>
+          <h3>Tuinslangdouche</h3>
+          <p>In mensentaal: de tuinslang. Temperatuur afhankelijk van zon, timing en hoeveel lef ge hebt. Verfrissend is het sowieso.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🎈</span>
+          <h3>Kinderanimatie</h3>
+          <p>Onder professionele leiding van de moemoe. Programma varieert van “doe keer buiten spelen” tot knutselen en handwerkjes.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-label="Niet op sociale media">
+      <div class="notice">Doe gewoon normaal: we geven onszelf al 5 sterren.</div>
+    </section>
+
+    <section id="westhoek">
+      <div class="split">
+        <div class="panel">
+          <h2>Westhoek inbegrepen</h2>
+          <p class="lead">Camping Beeckaert ligt in Jonkershove, een rustig dorpje bij Houthulst, in het midden van een streek waar je tegelijk kunt uitwaaien, fietsen, wandelen en geschiedenis opsnuiven.</p>
+          <ul>
+            <li><strong>Ieper</strong> dichtbij: vestingen, markt, Menenpoort en Flanders Fields-sfeer.</li>
+            <li><strong>Diksmuide</strong> dichtbij: IJzer, Dodengang, IJzertoren en veel WOI-erfgoed.</li>
+            <li><strong>Houthulstbos</strong> in de buurt: ideaal voor een rustige wandeling of een excuus om de kinderen moe te maken.</li>
+            <li><strong>Na de uitstap:</strong> terug naar den hof, voeten omhoog, drankje uit de frigo.</li>
+          </ul>
+        </div>
+        <div class="poster" aria-label="Retro affiche met caravan en kampvuur">
+          <div class="poster-content">
+            <div class="big">🏕️</div>
+            <strong>Buskant Velden<br>Garden Resort Deluxe</strong>
+            <p class="smallcaps">Jonkershove • West-Vlaanderen • all inclusive-ish</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="huisregels">
+      <div class="section-title">
+        <h2>Huisregels, maar plezant</h2>
+        <p class="lead">Omdat zelfs een vijfsterrenhofcamping niet vanzelf draait, hanteren we enkele duidelijke, redelijke en totaal niet onderhandelbare richtlijnen.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <span class="icon">📵</span>
+          <h3>Geen influencerstoestanden</h3>
+          <p>Geen influencers, geen Google Reviews, doe gewoon normaal, en niets hiervan komt trouwens op Facebook.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🧼</span>
+          <h3>De vaatwas</h3>
+          <p>enkel moemoe vult de vaatwas, geen uitzonderingen, zelfs niet voor schoonzonen</p>
+        </article>
+        <article class="card">
+          <span class="icon">🚴</span>
+          <h3>Koers op TV</h3>
+          <p>Als er koers op TV is, wordt er gekeken. Slapen mag zeker, maar we maken je wakker voor de laatste 10 km.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🧺</span>
+          <h3>Geen was-service</h3>
+          <p>Je bent oud genoeg. Wie sokken vuil maakt, mag ze ook zelf weer proper krijgen. Of strategisch vergeten.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🍺</span>
+          <h3>Frigo-etiquette</h3>
+          <p>Self-service betekent: pakken, genieten en niet doen alsof het laatste stukje kaas vanzelf verdwenen is.</p>
+        </article>
+        <article class="card">
+          <span class="icon">🌙</span>
+          <h3>Stilte na laat</h3>
+          <p>Vanaf het moment dat de gastheer geeuwt, schakelen we over op fluistermodus. Tenzij er nog worstjes op het vuur liggen.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="boeken">
+      <div class="booking">
+        <h2>Reserveer uw lapje hof</h2>
+        <p>Beschikbaarheid is uiterst beperkt, want we hebben maar één tuin en die is soms ook gewoon in gebruik als tuin. Vul hieronder uw boekingsaanvraag in. Onze receptie verwerkt alles aan de keukentafel.</p>
+        <form onsubmit="event.preventDefault(); document.getElementById('result').textContent='Aanvraag ontvangen. De campingdirectie bekijkt dit na de koffie. ’t Komt goed.';">
+          <label>
+            Naam van de hoofdboeker
+            <input type="text" placeholder="Bijv. Tante Rita" required>
+          </label>
+          <label>
+            Type verblijf
+            <select required>
+              <option>Caravan, ge geraakt er wel</option>
+              <option>Tent met zicht op den hof</option>
+              <option>Camper, zolang hij niet te groot doet</option>
+              <option>Dagbezoek met frigo-abonnement</option>
+            </select>
+          </label>
+          <label>
+            Aankomst
+            <input type="date" required>
+          </label>
+          <label>
+            Vertrek
+            <input type="date" required>
+          </label>
+          <label class="full">
+            Speciale wensen
+            <textarea rows="4" placeholder="Bijv. dicht bij de frigo, ver van de tuinslangdouche, zicht op de frambozen..."></textarea>
+          </label>
+          <button class="submit" type="submit">Verstuur naar de campingdirectie</button>
+        </form>
+        <p id="result" class="fineprint" aria-live="polite"></p>
+        <p class="fineprint"><strong>Kleine lettertjes:</strong> Camping Beeckaert is een hoogst tijdelijke, familiaal uitgebaatte hofcamping. Sterrenclassificatie werd intern toegekend. Annuleren kan mondeling, schriftelijk of door gewoon niet te komen opdagen en later te zeggen dat je dacht dat het volgende week was.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="smallcaps">Camping Beeckaert — ’t is gelijk je bij familie bent</p>
+    <p>Jonkershove, West-Vlaanderen • Tussen Ieper en Diksmuide • Open wanneer de poort openstaat</p>
+  </footer>
+</body>
+</html>
